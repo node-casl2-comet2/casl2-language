@@ -211,8 +211,28 @@ export function instructionOrCommentLine() {
     return p;
 }
 
-export interface ParseResult {
+export type ParseResult = ParseResultSuccess | ParseResultFailure;
+
+export interface ParseResultBase {
+    success: boolean;
+
+    /**
+     * SourceFileノード
+     */
     sourceFile: SourceFile;
+
+    /**
+     * 行の始まる文字の位置の配列
+     */
+    lineStarts: number[];
+}
+
+export interface ParseResultSuccess extends ParseResultBase {
+    success: true;
+}
+
+export interface ParseResultFailure extends ParseResultBase {
+    success: false;
     failures: Parsimmon.Failure[];
 }
 
@@ -336,7 +356,10 @@ export class Parser {
         const failures: Parsimmon.Failure[] = [];
 
         let offset = 0;
+        const lineStarts: number[] = [];
         for (const l of linesResult.value) {
+            lineStarts.push(offset);
+
             const [line, eol] = l;
             const length = line.length + (eol ? eol.length : 0);
 
@@ -352,7 +375,24 @@ export class Parser {
             offset += length;
         }
 
-        return { sourceFile, failures };
+        if (failures.length == 0) {
+            const success: ParseResultSuccess = {
+                success: true,
+                sourceFile,
+                lineStarts
+            };
+
+            return success;
+        } else {
+            const failure: ParseResultFailure = {
+                success: false,
+                sourceFile,
+                failures,
+                lineStarts
+            };
+
+            return failure;
+        }
     }
 }
 
@@ -379,4 +419,29 @@ export function printAST(sourceFile: Node) {
     };
 
     return JSON.stringify(sourceFile, replacer, "    ");
+}
+
+/**
+ * Get line
+ * @param pos Poistion to get line
+ * @param lineStarts Array of line starts
+ */
+export function getLine(pos: number, lineStarts: number[]) {
+    function binarySearch(start: number, end: number): number {
+        const range = end - start;
+        if (range == 0) return start;
+
+        const mid = start + range / 2;
+        const v = lineStarts[mid];
+        if (v == pos) {
+            return mid;
+        }
+        else if (v > pos) {
+            return binarySearch(start, mid - 1);
+        } else {
+            return binarySearch(mid + 1, end);
+        }
+    }
+
+    return binarySearch(0, lineStarts.length - 1);
 }
