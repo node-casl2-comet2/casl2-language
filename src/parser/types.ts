@@ -1,5 +1,7 @@
 "use strict";
 
+import { getLineOfPosition } from "./parser";
+
 export enum SyntaxKind {
     Unknwon,
     Label,
@@ -121,4 +123,33 @@ export interface SourceFile extends Node {
     kind: SyntaxKind.SourceFile;
     filePath: string;
     lines: Array<LineNode>;
+    getLineAndCharacterOfPosition(pos: number): LineAndCharacter;
+}
+
+export interface LineAndCharacter {
+    line: number;
+    character: number;
+}
+
+export class SourceFileObject extends NodeObject implements SourceFile {
+    public kind: SyntaxKind.SourceFile;
+    public filePath: string;
+    public lines: LineNode[];
+
+    private lineStarts: number[];
+
+    constructor(kind: SyntaxKind, start: number, end: number, lineStarts: number[]) {
+        super(kind, start, end);
+        this.lineStarts = lineStarts;
+    }
+
+    /**
+     * Get line and character of position
+     * @param pos Position
+     */
+    public getLineAndCharacterOfPosition(pos: number): LineAndCharacter {
+        const line = getLineOfPosition(pos, this.lineStarts);
+        const character = pos - this.lineStarts[line];
+        return { line, character };
+    }
 }

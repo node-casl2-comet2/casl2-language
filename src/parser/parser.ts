@@ -4,7 +4,7 @@ import * as Parsimmon from "parsimmon";
 import {
     NodeObject, SyntaxKind,
     Node, RawValueNode, GRNode, LabelNode, InstructionCodeNode, DecConstantNode, HexConstantNode, StringConstantNode, ConstantNode, LiteralNode,
-    OperandNode, OperandsNode, CommentNode, InstructionLineNode, CommentLineNode, LineNode, SourceFile
+    OperandNode, OperandsNode, CommentNode, InstructionLineNode, CommentLineNode, LineNode, SourceFile, SourceFileObject
 } from "./types";
 
 import { NodeVisitor, forEachChild, visitNode } from "../api";
@@ -304,12 +304,12 @@ export class Parser {
         const linesResult = linesP().parse(source);
         if (!linesResult.status) throw new Error();
 
-        const sourceFile = <SourceFile>createNode(SyntaxKind.SourceFile, 0, source.length);
+        const lineStarts: number[] = [];
+        const sourceFile = new SourceFileObject(SyntaxKind.SourceFile, 0, source.length, lineStarts);
         sourceFile.lines = [];
         const failures: Parsimmon.Failure[] = [];
 
         let offset = 0;
-        const lineStarts: number[] = [];
         for (const l of linesResult.value) {
             lineStarts.push(offset);
 
@@ -379,7 +379,7 @@ export function printAST(sourceFile: Node) {
  * @param pos Poistion to get line
  * @param lineStarts Array of line starts
  */
-export function getLine(pos: number, lineStarts: number[]) {
+export function getLineOfPosition(pos: number, lineStarts: number[]) {
     function binarySearch(start: number, end: number): number {
         const range = end - start;
         const mid = start + range / 2;
