@@ -7,6 +7,8 @@ import {
     OperandNode, OperandsNode, CommentNode, InstructionLineNode, CommentLineNode, LineNode, SourceFile
 } from "./types";
 
+import { NodeVisitor, forEachChild } from "../api";
+
 function map<TNode extends RawValueNode>(p: Parsimmon.Parser<string>, desc: string, kind: SyntaxKind): Parsimmon.Parser<TNode> {
     return p.mark()
         .desc(desc)
@@ -237,63 +239,12 @@ export interface ParseResultFailure extends ParseResultBase {
 }
 
 function resolveSyntaxPosOffset(node: Node, offset: number) {
-
-    function innerF(node: Node, offset: number) {
+    const visitor: NodeVisitor = (node: Node) => {
         node.start += offset;
         node.end += offset;
-    }
+    };
 
-    function optResolve(node: Node | undefined, offset: number) {
-        if (node) {
-            resolveSyntaxPosOffset(node, offset);
-        }
-    }
-
-    innerF(node, offset);
-
-    switch (node.kind) {
-        case SyntaxKind.Unknwon:
-        case SyntaxKind.Label:
-        case SyntaxKind.InstructionCode:
-        case SyntaxKind.GR:
-        case SyntaxKind.Literal:
-        case SyntaxKind.DecLiteral:
-        case SyntaxKind.HexLiteral:
-        case SyntaxKind.DecConstant:
-        case SyntaxKind.HexConstant:
-        case SyntaxKind.StringConstant:
-        case SyntaxKind.Comment:
-            break;
-
-        case SyntaxKind.Operand:
-            const operandN = <OperandNode>node;
-            resolveSyntaxPosOffset(operandN.op, offset);
-            break;
-
-        case SyntaxKind.Operands:
-            (<OperandsNode>node).operands.forEach(x => resolveSyntaxPosOffset(x, offset));
-            break;
-
-        case SyntaxKind.Constant:
-            resolveSyntaxPosOffset((<ConstantNode>node).const, offset);
-            break;
-
-        case SyntaxKind.InstructionLine:
-            const iln = <InstructionLineNode>node;
-            optResolve(iln.label, offset);
-            optResolve(iln.instructionCode, offset);
-            optResolve(iln.operands, offset);
-            optResolve(iln.comment, offset);
-            break;
-
-        case SyntaxKind.CommentLine:
-            const cln = <CommentLineNode>node;
-            optResolve(cln.comment, offset);
-            break;
-
-        case SyntaxKind.SourceFile:
-            throw new Error();
-    }
+    forEachChild(node, visitor);
 }
 
 export function lineP() {
@@ -429,10 +380,12 @@ export function printAST(sourceFile: Node) {
 export function getLine(pos: number, lineStarts: number[]) {
     function binarySearch(start: number, end: number): number {
         const range = end - start;
-        if (range == 0) return start;
-
         const mid = start + range / 2;
         const v = lineStarts[mid];
+        if (range == 0) {
+            return pos < v ? mid - 1 : mid;
+        }
+
         if (v == pos) {
             return mid;
         }
