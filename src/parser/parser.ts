@@ -7,7 +7,7 @@ import {
     OperandNode, OperandsNode, CommentNode, InstructionLineNode, CommentLineNode, LineNode, SourceFile
 } from "./types";
 
-import { NodeVisitor, forEachChild } from "../api";
+import { NodeVisitor, forEachChild, visitNode } from "../api";
 
 function map<TNode extends RawValueNode>(p: Parsimmon.Parser<string>, desc: string, kind: SyntaxKind): Parsimmon.Parser<TNode> {
     return p.mark()
@@ -242,9 +242,11 @@ function resolveSyntaxPosOffset(node: Node, offset: number) {
     const visitor: NodeVisitor = (node: Node) => {
         node.start += offset;
         node.end += offset;
+
+        forEachChild(node, visitor);
     };
 
-    forEachChild(node, visitor);
+    visitNode(node, visitor);
 }
 
 export function lineP() {

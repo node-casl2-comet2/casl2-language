@@ -7,16 +7,12 @@ import {
 
 export type NodeVisitor = (node: Node) => void;
 
+/**
+ * Visit all child nodes.
+ * @param node Node to traverse its children
+ * @param visitor Visitor function
+ */
 export function forEachChild<T>(node: Node, visitor: NodeVisitor) {
-    function optForEachChild(node: Node | undefined, visitor: NodeVisitor) {
-        if (node) {
-            forEachChild(node, visitor);
-        }
-    }
-
-    // どの種類のノードでも，そのノード自身に訪問(visit)する
-    visitNode(node, visitor);
-
     switch (node.kind) {
         case SyntaxKind.Unknwon:
         case SyntaxKind.Label:
@@ -33,36 +29,47 @@ export function forEachChild<T>(node: Node, visitor: NodeVisitor) {
 
         case SyntaxKind.Operand:
             const operandN = <OperandNode>node;
-            forEachChild(operandN.op, visitor);
+            visitNode(operandN.op, visitor);
             break;
 
         case SyntaxKind.Operands:
-            (<OperandsNode>node).operands.forEach(x => forEachChild(x, visitor));
+            visitNodes((<OperandsNode>node).operands, visitor);
             break;
 
         case SyntaxKind.Constant:
-            forEachChild((<ConstantNode>node).const, visitor);
+            const cn = (<ConstantNode>node);
+            visitNode(cn.const, visitor);
             break;
 
         case SyntaxKind.InstructionLine:
             const iln = <InstructionLineNode>node;
-            optForEachChild(iln.label, visitor);
-            forEachChild(iln.instructionCode, visitor);
-            optForEachChild(iln.operands, visitor);
-            optForEachChild(iln.comment, visitor);
+            visitNode(iln.label, visitor);
+            visitNode(iln.instructionCode, visitor);
+            visitNode(iln.operands, visitor);
+            visitNode(iln.comment, visitor);
             break;
 
         case SyntaxKind.CommentLine:
             const cln = <CommentLineNode>node;
-            optForEachChild(cln.comment, visitor);
+            visitNode(cln.comment, visitor);
             break;
 
         case SyntaxKind.SourceFile:
             const sf = <SourceFile>node;
-            sf.lines.forEach(x => forEachChild(x, visitor));
+            visitNodes(sf.lines, visitor);
     }
 }
 
-function visitNode(node: Node, visitor: NodeVisitor) {
-    visitor(node);
+export function visitNode(node: Node | undefined, visitor: NodeVisitor) {
+    if (node) {
+        visitor(node);
+    }
+}
+
+export function visitNodes(nodes: Node[] | undefined, visitor: NodeVisitor) {
+    if (nodes) {
+        for (const node of nodes) {
+            visitNode(node, visitor);
+        }
+    }
 }
