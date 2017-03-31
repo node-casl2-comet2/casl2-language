@@ -138,8 +138,9 @@ export class SourceFileObject extends NodeObject implements SourceFile {
 
     private lineStarts: number[];
 
-    constructor(kind: SyntaxKind, start: number, end: number, lineStarts: number[]) {
+    constructor(kind: SyntaxKind, start: number, end: number, filePath: string, lineStarts: number[]) {
         super(kind, start, end);
+        this.filePath = filePath;
         this.lineStarts = lineStarts;
     }
 

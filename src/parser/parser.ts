@@ -298,14 +298,14 @@ export class Parser {
         return result;
     }
 
-    public parseSource(source: string): ParseResult {
+    public parseSource(filePath: string, source: string): ParseResult {
         const lp = lineP();
 
         const linesResult = linesP().parse(source);
         if (!linesResult.status) throw new Error();
 
         const lineStarts: number[] = [];
-        const sourceFile = new SourceFileObject(SyntaxKind.SourceFile, 0, source.length, lineStarts);
+        const sourceFile = new SourceFileObject(SyntaxKind.SourceFile, 0, source.length, filePath, lineStarts);
         sourceFile.lines = [];
         const failures: Parsimmon.Failure[] = [];
 

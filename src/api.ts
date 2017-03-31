@@ -4,6 +4,7 @@ import {
     Node, SyntaxKind, OperandNode, OperandsNode, ConstantNode, InstructionLineNode, CommentLineNode,
     SourceFile
 } from "./parser/types";
+import { Parser } from "./parser/parser";
 
 export type NodeVisitor = (node: Node) => void;
 
@@ -72,4 +73,10 @@ export function visitNodes(nodes: Node[] | undefined, visitor: NodeVisitor) {
             visitNode(node, visitor);
         }
     }
+}
+
+export function createSourceFile(filepath: string, source: string) {
+    const parser = new Parser();
+    const result = parser.parseSource(filepath, source);
+    return result.sourceFile;
 }

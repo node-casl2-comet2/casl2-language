@@ -1,6 +1,6 @@
 "use strict";
 
-export { NodeVisitor, forEachChild } from "./api";
+export { NodeVisitor, forEachChild, createSourceFile } from "./api";
 export {
     // Nodes
     Node, LabelNode, InstructionCodeNode, OperandsNode, OperandNode, GRNode,
