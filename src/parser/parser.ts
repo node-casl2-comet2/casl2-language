@@ -3,7 +3,8 @@
 import * as Parsimmon from "parsimmon";
 import {
     NodeObject, SyntaxKind,
-    Node, RawValueNode, GRNode, LabelNode, InstructionCodeNode, DecConstantNode, HexConstantNode, StringConstantNode, ConstantNode, LiteralNode,
+    Node, RawValueNode, GRNode, LabelNode, InstructionCodeNode, DecConstantNode, HexConstantNode, StringConstantNode, ConstantNode,
+    LiteralNode, DecLiteralNode, HexLiteralNode,
     OperandNode, OperandsNode, CommentNode, InstructionLineNode, CommentLineNode, LineNode, SourceFile, SourceFileObject
 } from "./types";
 
@@ -97,13 +98,34 @@ export function constantP() {
 
 // リテラル
 export function literalP() {
+    const dec = decLiteralP();
+    const hex = hexLiteralP();
+    const p = dec.or(hex);
+    return p
+        .desc("リテラル")
+        .map(node => {
+            const n = <LiteralNode>cloneNode(node, SyntaxKind.Literal);
+            n.literal = node;
+            return n;
+        });
+}
+
+// 10進リテラル
+export function decLiteralP() {
     const equal = Parsimmon.string("=");
     const dec = decConstantP();
+    const f = (x: string, y: DecConstantNode) => x + y.raw;
+    const p = Parsimmon.seqMap(equal, dec, f);
+    return map<DecLiteralNode>(p, "10進リテラル", SyntaxKind.DecLiteral);
+}
+
+// 16進リテラル
+export function hexLiteralP() {
+    const equal = Parsimmon.string("=");
     const hex = hexConstantP();
-    const mix = dec.or(hex);
-    const f = (x: string, y: RawValueNode) => x + y.raw;
-    const p = Parsimmon.seqMap(equal, mix, f);
-    return map<LiteralNode>(p, "リテラル", SyntaxKind.Literal);
+    const f = (x: string, y: HexConstantNode) => x + y.raw;
+    const p = Parsimmon.seqMap(equal, hex, f);
+    return map<HexLiteralNode>(p, "16進リテラル", SyntaxKind.HexLiteral);
 }
 
 // オペランド

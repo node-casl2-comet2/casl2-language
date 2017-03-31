@@ -71,15 +71,16 @@ export interface GRNode extends RawValueNode {
     kind: SyntaxKind.GR;
 }
 
-export interface LiteralNode extends RawValueNode {
+export interface LiteralNode extends Node {
     kind: SyntaxKind.Literal;
+    literal: Node;
 }
 
 export interface DecLiteralNode extends RawValueNode {
     kind: SyntaxKind.DecLiteral;
 }
 
-export interface HexLiteralNode extends Node {
+export interface HexLiteralNode extends RawValueNode {
     kind: SyntaxKind.HexLiteral;
 }
 

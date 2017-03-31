@@ -2,7 +2,7 @@
 
 import {
     Node, SyntaxKind, OperandNode, OperandsNode, ConstantNode, InstructionLineNode, CommentLineNode,
-    SourceFile
+    LiteralNode, SourceFile
 } from "./parser/types";
 import { Parser } from "./parser/parser";
 
@@ -19,13 +19,16 @@ export function forEachChild<T>(node: Node, visitor: NodeVisitor) {
         case SyntaxKind.Label:
         case SyntaxKind.InstructionCode:
         case SyntaxKind.GR:
-        case SyntaxKind.Literal:
         case SyntaxKind.DecLiteral:
         case SyntaxKind.HexLiteral:
         case SyntaxKind.DecConstant:
         case SyntaxKind.HexConstant:
         case SyntaxKind.StringConstant:
         case SyntaxKind.Comment:
+            break;
+
+        case SyntaxKind.Literal:
+            visitNode((<LiteralNode>node).literal, visitor);
             break;
 
         case SyntaxKind.Operand:
