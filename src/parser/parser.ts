@@ -404,9 +404,9 @@ export function printAST(sourceFile: Node) {
 export function getLineOfPosition(pos: number, lineStarts: number[]) {
     function binarySearch(start: number, end: number): number {
         const range = end - start;
-        const mid = start + range / 2;
+        const mid = start + Math.floor(range / 2);
         const v = lineStarts[mid];
-        if (range == 0) {
+        if (range <= 0) {
             return pos < v ? mid - 1 : mid;
         }
 

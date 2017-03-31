@@ -3,7 +3,7 @@
 export { NodeVisitor, forEachChild, createSourceFile } from "./api";
 export {
     // Nodes
-    Node, LabelNode, InstructionCodeNode, OperandsNode, OperandNode, GRNode,
+    Node, RawValueNode, LabelNode, InstructionCodeNode, OperandsNode, OperandNode, GRNode,
     LiteralNode, DecLiteralNode, HexLiteralNode, ConstantNode,
     DecConstantNode, HexConstantNode, StringConstantNode, CommentNode, InstructionLineNode,
     CommentLineNode, LineNode, SourceFile,

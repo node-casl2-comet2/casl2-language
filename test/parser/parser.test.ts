@@ -48,9 +48,10 @@ suite("Parser", () => {
     });
 
     test("parse source", () => {
-        const source = fs.readFileSync("./test/baseline/programs/normal_01.cas").toString();
+        const path = "./test/baseline/basic/simple.cas";
+        const source = fs.readFileSync(path).toString();
         const parser = new Parser();
-        const result = parser.parseSource(source);
+        const result = parser.parseSource(path, source);
         fs.writeFileSync("./AST.json", printAST(result.sourceFile));
     });
 });
