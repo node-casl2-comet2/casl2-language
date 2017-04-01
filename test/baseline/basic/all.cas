@@ -1,0 +1,38 @@
+CASL    START   CASL
+        START
+        END
+BUF     DS      256
+LEN     DS      1
+        DC      1, #0001, 'ABC', CASL 
+        IN      BUF, LEN
+        OUT     BUF, LEN
+        RPUSH
+        RPOP
+        LD      GR1, GR2
+        ST      GR1, 1, GR2
+        LAD     GR1, 1, GR2
+        ADDA    GR1, GR2
+        ADDL    GR1, GR2
+        SUBA    GR1, GR2
+        SUBL    GR1, GR2
+        AND     GR1, GR2
+        OR      GR1, GR2
+        XOR     GR1, GR2
+        CPA     GR1, GR2
+        CPL     GR1, GR2
+        SLA     GR1, 1, GR2
+        SRA     GR1, 1, GR2
+        SLL     GR1, 1, GR2
+        SRL     GR1, 1, GR2
+        JPL     1, GR2
+        JMI     1, GR2
+        JNZ     1, GR2
+        JZE     1, GR2
+        JOV     1, GR2
+        JUMP    1, GR2
+        PUSH    1, GR2
+        POP     GR1
+        CALL    1, GR2
+        RET
+        SVC     1, GR2
+        NOP

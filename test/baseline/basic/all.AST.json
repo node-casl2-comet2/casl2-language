@@ -1,0 +1,1485 @@
+{
+    "kind": "SourceFile",
+    "start": 0,
+    "end": 908,
+    "filePath": "./test/baseline/basic/all.cas",
+    "lineStarts": [
+        0,
+        22,
+        37,
+        50,
+        71,
+        90,
+        130,
+        156,
+        182,
+        197,
+        211,
+        237,
+        266,
+        295,
+        321,
+        347,
+        373,
+        399,
+        425,
+        451,
+        477,
+        503,
+        529,
+        558,
+        587,
+        616,
+        645,
+        669,
+        693,
+        717,
+        741,
+        765,
+        789,
+        813,
+        834,
+        858,
+        871,
+        895,
+        908
+    ],
+    "lines": [
+        {
+            "kind": "InstructionLine",
+            "start": 0,
+            "end": 20,
+            "label": {
+                "kind": "Label",
+                "start": 0,
+                "end": 4,
+                "raw": "CASL"
+            },
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 8,
+                "end": 13,
+                "raw": "START"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 16,
+                "end": 20,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 16,
+                        "end": 20,
+                        "op": {
+                            "kind": "Label",
+                            "start": 16,
+                            "end": 20,
+                            "raw": "CASL"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 22,
+            "end": 35,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 30,
+                "end": 35,
+                "raw": "START"
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 37,
+            "end": 48,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 45,
+                "end": 48,
+                "raw": "END"
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 50,
+            "end": 69,
+            "label": {
+                "kind": "Label",
+                "start": 50,
+                "end": 53,
+                "raw": "BUF"
+            },
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 58,
+                "end": 60,
+                "raw": "DS"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 66,
+                "end": 69,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 66,
+                        "end": 69,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 66,
+                            "end": 69,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 66,
+                                "end": 69,
+                                "raw": "256"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 71,
+            "end": 88,
+            "label": {
+                "kind": "Label",
+                "start": 71,
+                "end": 74,
+                "raw": "LEN"
+            },
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 79,
+                "end": 81,
+                "raw": "DS"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 87,
+                "end": 88,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 87,
+                        "end": 88,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 87,
+                            "end": 88,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 87,
+                                "end": 88,
+                                "raw": "1"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 130,
+            "end": 154,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 138,
+                "end": 140,
+                "raw": "IN"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 146,
+                "end": 154,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 146,
+                        "end": 149,
+                        "op": {
+                            "kind": "Label",
+                            "start": 146,
+                            "end": 149,
+                            "raw": "BUF"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 151,
+                        "end": 154,
+                        "op": {
+                            "kind": "Label",
+                            "start": 151,
+                            "end": 154,
+                            "raw": "LEN"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 156,
+            "end": 180,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 164,
+                "end": 167,
+                "raw": "OUT"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 172,
+                "end": 180,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 172,
+                        "end": 175,
+                        "op": {
+                            "kind": "Label",
+                            "start": 172,
+                            "end": 175,
+                            "raw": "BUF"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 177,
+                        "end": 180,
+                        "op": {
+                            "kind": "Label",
+                            "start": 177,
+                            "end": 180,
+                            "raw": "LEN"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 182,
+            "end": 195,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 190,
+                "end": 195,
+                "raw": "RPUSH"
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 197,
+            "end": 209,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 205,
+                "end": 209,
+                "raw": "RPOP"
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 211,
+            "end": 235,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 219,
+                "end": 221,
+                "raw": "LD"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 227,
+                "end": 235,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 227,
+                        "end": 230,
+                        "op": {
+                            "kind": "GR",
+                            "start": 227,
+                            "end": 230,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 232,
+                        "end": 235,
+                        "op": {
+                            "kind": "GR",
+                            "start": 232,
+                            "end": 235,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 237,
+            "end": 264,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 245,
+                "end": 247,
+                "raw": "ST"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 253,
+                "end": 264,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 253,
+                        "end": 256,
+                        "op": {
+                            "kind": "GR",
+                            "start": 253,
+                            "end": 256,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 258,
+                        "end": 259,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 258,
+                            "end": 259,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 258,
+                                "end": 259,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 261,
+                        "end": 264,
+                        "op": {
+                            "kind": "GR",
+                            "start": 261,
+                            "end": 264,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 266,
+            "end": 293,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 274,
+                "end": 277,
+                "raw": "LAD"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 282,
+                "end": 293,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 282,
+                        "end": 285,
+                        "op": {
+                            "kind": "GR",
+                            "start": 282,
+                            "end": 285,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 287,
+                        "end": 288,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 287,
+                            "end": 288,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 287,
+                                "end": 288,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 290,
+                        "end": 293,
+                        "op": {
+                            "kind": "GR",
+                            "start": 290,
+                            "end": 293,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 295,
+            "end": 319,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 303,
+                "end": 307,
+                "raw": "ADDA"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 311,
+                "end": 319,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 311,
+                        "end": 314,
+                        "op": {
+                            "kind": "GR",
+                            "start": 311,
+                            "end": 314,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 316,
+                        "end": 319,
+                        "op": {
+                            "kind": "GR",
+                            "start": 316,
+                            "end": 319,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 321,
+            "end": 345,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 329,
+                "end": 333,
+                "raw": "ADDL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 337,
+                "end": 345,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 337,
+                        "end": 340,
+                        "op": {
+                            "kind": "GR",
+                            "start": 337,
+                            "end": 340,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 342,
+                        "end": 345,
+                        "op": {
+                            "kind": "GR",
+                            "start": 342,
+                            "end": 345,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 347,
+            "end": 371,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 355,
+                "end": 359,
+                "raw": "SUBA"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 363,
+                "end": 371,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 363,
+                        "end": 366,
+                        "op": {
+                            "kind": "GR",
+                            "start": 363,
+                            "end": 366,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 368,
+                        "end": 371,
+                        "op": {
+                            "kind": "GR",
+                            "start": 368,
+                            "end": 371,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 373,
+            "end": 397,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 381,
+                "end": 385,
+                "raw": "SUBL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 389,
+                "end": 397,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 389,
+                        "end": 392,
+                        "op": {
+                            "kind": "GR",
+                            "start": 389,
+                            "end": 392,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 394,
+                        "end": 397,
+                        "op": {
+                            "kind": "GR",
+                            "start": 394,
+                            "end": 397,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 399,
+            "end": 423,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 407,
+                "end": 410,
+                "raw": "AND"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 415,
+                "end": 423,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 415,
+                        "end": 418,
+                        "op": {
+                            "kind": "GR",
+                            "start": 415,
+                            "end": 418,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 420,
+                        "end": 423,
+                        "op": {
+                            "kind": "GR",
+                            "start": 420,
+                            "end": 423,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 425,
+            "end": 449,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 433,
+                "end": 435,
+                "raw": "OR"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 441,
+                "end": 449,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 441,
+                        "end": 444,
+                        "op": {
+                            "kind": "GR",
+                            "start": 441,
+                            "end": 444,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 446,
+                        "end": 449,
+                        "op": {
+                            "kind": "GR",
+                            "start": 446,
+                            "end": 449,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 451,
+            "end": 475,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 459,
+                "end": 462,
+                "raw": "XOR"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 467,
+                "end": 475,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 467,
+                        "end": 470,
+                        "op": {
+                            "kind": "GR",
+                            "start": 467,
+                            "end": 470,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 472,
+                        "end": 475,
+                        "op": {
+                            "kind": "GR",
+                            "start": 472,
+                            "end": 475,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 477,
+            "end": 501,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 485,
+                "end": 488,
+                "raw": "CPA"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 493,
+                "end": 501,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 493,
+                        "end": 496,
+                        "op": {
+                            "kind": "GR",
+                            "start": 493,
+                            "end": 496,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 498,
+                        "end": 501,
+                        "op": {
+                            "kind": "GR",
+                            "start": 498,
+                            "end": 501,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 503,
+            "end": 527,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 511,
+                "end": 514,
+                "raw": "CPL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 519,
+                "end": 527,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 519,
+                        "end": 522,
+                        "op": {
+                            "kind": "GR",
+                            "start": 519,
+                            "end": 522,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 524,
+                        "end": 527,
+                        "op": {
+                            "kind": "GR",
+                            "start": 524,
+                            "end": 527,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 529,
+            "end": 556,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 537,
+                "end": 540,
+                "raw": "SLA"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 545,
+                "end": 556,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 545,
+                        "end": 548,
+                        "op": {
+                            "kind": "GR",
+                            "start": 545,
+                            "end": 548,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 550,
+                        "end": 551,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 550,
+                            "end": 551,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 550,
+                                "end": 551,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 553,
+                        "end": 556,
+                        "op": {
+                            "kind": "GR",
+                            "start": 553,
+                            "end": 556,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 558,
+            "end": 585,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 566,
+                "end": 569,
+                "raw": "SRA"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 574,
+                "end": 585,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 574,
+                        "end": 577,
+                        "op": {
+                            "kind": "GR",
+                            "start": 574,
+                            "end": 577,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 579,
+                        "end": 580,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 579,
+                            "end": 580,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 579,
+                                "end": 580,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 582,
+                        "end": 585,
+                        "op": {
+                            "kind": "GR",
+                            "start": 582,
+                            "end": 585,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 587,
+            "end": 614,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 595,
+                "end": 598,
+                "raw": "SLL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 603,
+                "end": 614,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 603,
+                        "end": 606,
+                        "op": {
+                            "kind": "GR",
+                            "start": 603,
+                            "end": 606,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 608,
+                        "end": 609,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 608,
+                            "end": 609,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 608,
+                                "end": 609,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 611,
+                        "end": 614,
+                        "op": {
+                            "kind": "GR",
+                            "start": 611,
+                            "end": 614,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 616,
+            "end": 643,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 624,
+                "end": 627,
+                "raw": "SRL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 632,
+                "end": 643,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 632,
+                        "end": 635,
+                        "op": {
+                            "kind": "GR",
+                            "start": 632,
+                            "end": 635,
+                            "raw": "GR1"
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 637,
+                        "end": 638,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 637,
+                            "end": 638,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 637,
+                                "end": 638,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 640,
+                        "end": 643,
+                        "op": {
+                            "kind": "GR",
+                            "start": 640,
+                            "end": 643,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 645,
+            "end": 667,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 653,
+                "end": 656,
+                "raw": "JPL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 661,
+                "end": 667,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 661,
+                        "end": 662,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 661,
+                            "end": 662,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 661,
+                                "end": 662,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 664,
+                        "end": 667,
+                        "op": {
+                            "kind": "GR",
+                            "start": 664,
+                            "end": 667,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 669,
+            "end": 691,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 677,
+                "end": 680,
+                "raw": "JMI"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 685,
+                "end": 691,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 685,
+                        "end": 686,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 685,
+                            "end": 686,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 685,
+                                "end": 686,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 688,
+                        "end": 691,
+                        "op": {
+                            "kind": "GR",
+                            "start": 688,
+                            "end": 691,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 693,
+            "end": 715,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 701,
+                "end": 704,
+                "raw": "JNZ"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 709,
+                "end": 715,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 709,
+                        "end": 710,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 709,
+                            "end": 710,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 709,
+                                "end": 710,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 712,
+                        "end": 715,
+                        "op": {
+                            "kind": "GR",
+                            "start": 712,
+                            "end": 715,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 717,
+            "end": 739,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 725,
+                "end": 728,
+                "raw": "JZE"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 733,
+                "end": 739,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 733,
+                        "end": 734,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 733,
+                            "end": 734,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 733,
+                                "end": 734,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 736,
+                        "end": 739,
+                        "op": {
+                            "kind": "GR",
+                            "start": 736,
+                            "end": 739,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 741,
+            "end": 763,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 749,
+                "end": 752,
+                "raw": "JOV"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 757,
+                "end": 763,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 757,
+                        "end": 758,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 757,
+                            "end": 758,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 757,
+                                "end": 758,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 760,
+                        "end": 763,
+                        "op": {
+                            "kind": "GR",
+                            "start": 760,
+                            "end": 763,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 765,
+            "end": 787,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 773,
+                "end": 777,
+                "raw": "JUMP"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 781,
+                "end": 787,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 781,
+                        "end": 782,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 781,
+                            "end": 782,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 781,
+                                "end": 782,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 784,
+                        "end": 787,
+                        "op": {
+                            "kind": "GR",
+                            "start": 784,
+                            "end": 787,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 789,
+            "end": 811,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 797,
+                "end": 801,
+                "raw": "PUSH"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 805,
+                "end": 811,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 805,
+                        "end": 806,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 805,
+                            "end": 806,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 805,
+                                "end": 806,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 808,
+                        "end": 811,
+                        "op": {
+                            "kind": "GR",
+                            "start": 808,
+                            "end": 811,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 813,
+            "end": 832,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 821,
+                "end": 824,
+                "raw": "POP"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 829,
+                "end": 832,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 829,
+                        "end": 832,
+                        "op": {
+                            "kind": "GR",
+                            "start": 829,
+                            "end": 832,
+                            "raw": "GR1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 834,
+            "end": 856,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 842,
+                "end": 846,
+                "raw": "CALL"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 850,
+                "end": 856,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 850,
+                        "end": 851,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 850,
+                            "end": 851,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 850,
+                                "end": 851,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 853,
+                        "end": 856,
+                        "op": {
+                            "kind": "GR",
+                            "start": 853,
+                            "end": 856,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 858,
+            "end": 869,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 866,
+                "end": 869,
+                "raw": "RET"
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 871,
+            "end": 893,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 879,
+                "end": 882,
+                "raw": "SVC"
+            },
+            "operands": {
+                "kind": "Operands",
+                "start": 887,
+                "end": 893,
+                "operands": [
+                    {
+                        "kind": "Operand",
+                        "start": 887,
+                        "end": 888,
+                        "op": {
+                            "kind": "Constant",
+                            "start": 887,
+                            "end": 888,
+                            "const": {
+                                "kind": "DecConstant",
+                                "start": 887,
+                                "end": 888,
+                                "raw": "1"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "Operand",
+                        "start": 890,
+                        "end": 893,
+                        "op": {
+                            "kind": "GR",
+                            "start": 890,
+                            "end": 893,
+                            "raw": "GR2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "InstructionLine",
+            "start": 895,
+            "end": 906,
+            "instructionCode": {
+                "kind": "InstructionCode",
+                "start": 903,
+                "end": 906,
+                "raw": "NOP"
+            }
+        },
+        {
+            "kind": "CommentLine",
+            "start": 908,
+            "end": 908
+        }
+    ]
+}
