@@ -275,17 +275,21 @@ export function lineP() {
     return Parsimmon.regex(/.*/);
 }
 
-export function mySepBy<T1, T2>(content: Parsimmon.Parser<T1>, sep: Parsimmon.Parser<T2>) {
-    const remaining = Parsimmon.seq(sep, content);
-    const p = Parsimmon.seqMap(content, remaining.many(), (x, y) => {
+export function mySepBy<T1, T2>(contentP: Parsimmon.Parser<T1>, sepP: Parsimmon.Parser<T2>) {
+    const remainingP = Parsimmon.seq(sepP, contentP);
+    const p = Parsimmon.seqMap(contentP, remainingP.many(), (x, y) => {
         const results: [T1, T2 | undefined][] = [];
-        results.push([x, y[0][0]]);
+        if (y.length == 0) {
+            results.push([x, undefined]);
+        } else {
+            results.push([x, y[0][0]]);
 
-        for (let i = 0; i < y.length - 1; i++) {
-            results.push([y[i][1], y[i + 1][0]]);
+            for (let i = 0; i < y.length - 1; i++) {
+                results.push([y[i][1], y[i + 1][0]]);
+            }
+
+            results.push([y[y.length - 1][1], undefined]);
         }
-
-        results.push([y[y.length - 1][1], undefined]);
 
         return results;
     });
