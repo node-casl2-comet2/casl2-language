@@ -331,7 +331,9 @@ export class Parser {
         if (!linesResult.status) throw new Error();
 
         const lineStarts: number[] = [];
-        const sourceFile = new SourceFileObject(SyntaxKind.SourceFile, 0, source.length, filePath, lineStarts);
+        const sourceFile = new SourceFileObject(
+            SyntaxKind.SourceFile, 0, source.length,
+            filePath, source, lineStarts);
         sourceFile.lines = [];
         const failures: Parsimmon.Failure[] = [];
 

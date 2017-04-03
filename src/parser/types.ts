@@ -122,9 +122,11 @@ export type LineNode = InstructionLineNode | CommentLineNode;
 
 export interface SourceFile extends Node {
     kind: SyntaxKind.SourceFile;
+    text: string;
     filePath: string;
     lines: Array<LineNode>;
     getLineAndCharacterOfPosition(pos: number): LineAndCharacter;
+    getLineStarts(): number[];
 }
 
 export interface LineAndCharacter {
@@ -135,13 +137,15 @@ export interface LineAndCharacter {
 export class SourceFileObject extends NodeObject implements SourceFile {
     public kind: SyntaxKind.SourceFile;
     public filePath: string;
+    public text: string;
     public lines: LineNode[];
 
     private lineStarts: number[];
 
-    constructor(kind: SyntaxKind, start: number, end: number, filePath: string, lineStarts: number[]) {
+    constructor(kind: SyntaxKind, start: number, end: number, filePath: string, text: string, lineStarts: number[]) {
         super(kind, start, end);
         this.filePath = filePath;
+        this.text = text;
         this.lineStarts = lineStarts;
     }
 
@@ -153,5 +157,9 @@ export class SourceFileObject extends NodeObject implements SourceFile {
         const line = getLineOfPosition(pos, this.lineStarts);
         const character = pos - this.lineStarts[line];
         return { line, character };
+    }
+
+    public getLineStarts(): number[] {
+        return this.lineStarts;
     }
 }

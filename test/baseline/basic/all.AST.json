@@ -3,6 +3,7 @@
     "start": 0,
     "end": 908,
     "filePath": "./test/baseline/basic/all.cas",
+    "text": "CASL    START   CASL\r\n        START\r\n        END\r\nBUF     DS      256\r\nLEN     DS      1\r\n        DC      1, #0001, 'ABC', CASL \r\n        IN      BUF, LEN\r\n        OUT     BUF, LEN\r\n        RPUSH\r\n        RPOP\r\n        LD      GR1, GR2\r\n        ST      GR1, 1, GR2\r\n        LAD     GR1, 1, GR2\r\n        ADDA    GR1, GR2\r\n        ADDL    GR1, GR2\r\n        SUBA    GR1, GR2\r\n        SUBL    GR1, GR2\r\n        AND     GR1, GR2\r\n        OR      GR1, GR2\r\n        XOR     GR1, GR2\r\n        CPA     GR1, GR2\r\n        CPL     GR1, GR2\r\n        SLA     GR1, 1, GR2\r\n        SRA     GR1, 1, GR2\r\n        SLL     GR1, 1, GR2\r\n        SRL     GR1, 1, GR2\r\n        JPL     1, GR2\r\n        JMI     1, GR2\r\n        JNZ     1, GR2\r\n        JZE     1, GR2\r\n        JOV     1, GR2\r\n        JUMP    1, GR2\r\n        PUSH    1, GR2\r\n        POP     GR1\r\n        CALL    1, GR2\r\n        RET\r\n        SVC     1, GR2\r\n        NOP\r\n",
     "lineStarts": [
         0,
         22,
