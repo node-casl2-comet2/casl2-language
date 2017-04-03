@@ -1,5 +1,8 @@
 ## casl2-language
 
+[![Build Status](https://travis-ci.org/node-casl2-comet2/casl2-language.svg?branch=master)](https://travis-ci.org/node-casl2-comet2/casl2-language)
+[![Coverage Status](https://coveralls.io/repos/github/node-casl2-comet2/casl2-language/badge.svg?branch=master)](https://coveralls.io/github/node-casl2-comet2/casl2-language?branch=master)
+
 casl2-languageはCASL2の言語解析機能を持つライブラリです。
 
 ## Features
