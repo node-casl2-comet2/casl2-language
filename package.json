@@ -1,7 +1,7 @@
 {
   "name": "@maxfield/casl2-language",
   "version": "0.0.1",
-  "description": "",
+  "description": "CASL2 language analysis library",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "author": "Maxfield Walker",
