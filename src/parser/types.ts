@@ -124,7 +124,7 @@ export interface SourceFile extends Node {
     kind: SyntaxKind.SourceFile;
     text: string;
     filePath: string;
-    lines: Array<LineNode>;
+    lines: LineNode[];
     getLineAndCharacterOfPosition(pos: number): LineAndCharacter;
     getLineStarts(): number[];
 }

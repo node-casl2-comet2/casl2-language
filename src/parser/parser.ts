@@ -184,7 +184,7 @@ export function instructionLineP() {
             .map(x => {
                 if (x.length == 0) return undefined;
                 const first = x[0];
-                return first.operands.length > 0 ? first : undefined
+                return first.operands.length > 0 ? first : undefined;
             });
     }
 
